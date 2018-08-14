@@ -42,24 +42,36 @@ body * {
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoibWFyZW5hYiIsImEiOiJjajV2ajVyZXUwMnN3MzNwNzR3Ynk2cjIyIn0.sI-ynx23EEdpZFbEDu6qjA';
 
+// Set bounds
+    var bounds = [
+    [39.368,-6.101], // Southwest coordinates
+    [39.464,-6.000]  // Northeast coordinates
+    ];
+
 var beforeMap = new mapboxgl.Map({
     container: 'before',
     style: 'mapbox://styles/mapbox/satellite-v9',
     center: [39.418, -6.041],
-    zoom: 13
+    zoom: 13,
+    maxBounds: bounds
 });
 
 var afterMap = new mapboxgl.Map({
     container: 'after',
     style: 'mapbox://styles/marenab/cjksyzy7l00ju2sphshj9t2u9',
     center: [39.418, -6.041],
-    zoom: 13
+    zoom: 13,
+    maxBounds: bounds
 });
 
 var map = new mapboxgl.Compare(beforeMap, afterMap, {
     // Set this to enable comparing two maps by mouse movement:
     // mousemove: true
 });
+
+// Add zoom and rotation controls to the map.
+beforeMap.addControl(new mapboxgl.NavigationControl());
+
 </script>
 
 </body>
