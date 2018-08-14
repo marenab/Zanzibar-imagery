@@ -1,3 +1,3 @@
 # Zanzibar-imagery
 
-https://marenab.github.io/Zanzibar-imagery/
+http://marenab.github.io/Zanzibar-imagery/
